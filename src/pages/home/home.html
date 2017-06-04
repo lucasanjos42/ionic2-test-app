@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Usuários
+    </ion-title>
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list *ngFor="let user of users">
+    <ion-item-sliding>
+      <ion-item>
+        <h1>{{user.name}}</h1>
+        <p>{{user.username}}</p>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="deleteData(user)">
+        Deletar
+      </button>
+      </ion-item-options>
+      <ion-item-options side="left">
+        <button ion-button color="secondary" (click)="putData(user)">
+        Editar
+      </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+
+</ion-content>

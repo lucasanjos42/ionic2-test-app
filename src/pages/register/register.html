@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Registrar
+    </ion-title>
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+  <h2>Cadastro</h2>
+
+  <form [formGroup]="register" (ngSubmit)="postData()">
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating>Nome</ion-label>
+        <ion-input type="text" name="name" formControlName="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email" name="username" formControlName="username"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Senha</ion-label>
+        <ion-input type="password" name="password" formControlName="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <button [disabled]="register.invalid" ion-button full block color="secondary">Enviar</button>
+      </ion-item>
+
+    </ion-list>
+  </form>
+
+</ion-content>
